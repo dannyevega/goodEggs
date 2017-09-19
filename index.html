@@ -7,7 +7,20 @@
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="style.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>		
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+		<!-- add mocha css, to show results -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    	<!-- add mocha framework code -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+		<script>
+			mocha.setup('bdd'); // minimal setup
+		</script>
+		<!-- add chai -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+		<script>
+			// chai has a lot of stuff, let's make assert global
+			let assert = chai.assert;
+		</script>		
     </head>
     <body>
         <header>
@@ -38,8 +51,8 @@
 						<option value="Los Angeles">Los Angeles</option>
 						<option value="San Francisco">San Francisco</option>
 						<option value="Seattle">Seattle</option>
-						<option value="Portland">Portland</option>					
-					</select>						
+						<option value="Portland">Portland</option>
+					</select>
                 </div>
                 <div class="col-md-6 col-md-offset-3">
                     <h2>Select a destination:</h2>
@@ -49,9 +62,9 @@
 						<option value="Los Angeles">Los Angeles</option>
 						<option value="San Francisco" selected="selected">San Francisco</option>
 						<option value="Seattle">Seattle</option>
-						<option value="Portland">Portland</option>					
-					</select>						
-                </div>				
+						<option value="Portland">Portland</option>
+					</select>
+                </div>
                 <div class="col-md-6 col-md-offset-3">
                     <h2>How many seats?</h2>
                 </div>
@@ -65,19 +78,30 @@
 						<option value="6">6</option>
 						<option value="7">7</option>
 						<option value="8">8</option>
-						<option value="9">9</option>										
+						<option value="9">9</option>
 						<option value="10">10</option>
-					</select><br />				
+					</select><br />
 					<button type="button" id="submit">Submit</button>
                 </div>
                 <div class="col-md-6 col-md-offset-3">
 					<h3 id="message"></h3>
 					<p id="remaining"></p>
-                </div>					
+                </div>
             </div>
 		</div>
 
-        <!-- load angular via CDN -->
+        
         <script src="app.js"></script>
+		
+  		<!-- the script with tests (describe, it...) -->
+  		<script src="test.js"></script>
+
+  		<!-- the element with id="mocha" will contain test results -->
+  		<div id="mocha"></div>
+
+  		<!-- run tests! -->
+  		<script>
+			mocha.run();
+  		</script>		
     </body>
 </html>

@@ -1,0 +1,23 @@
+{
+  "name": "goodeggs",
+  "version": "1.0.0",
+  "description": "mocha test cases for train reserve seats functionality",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannyevega/goodEggs.git"
+  },
+  "keywords": [
+    "mocha",
+    "test"
+  ],
+  "author": "Danny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dannyevega/goodEggs/issues"
+  },
+  "homepage": "https://github.com/dannyevega/goodEggs#readme"
+}
