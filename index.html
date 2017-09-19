@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>Reserve a seat</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="style.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>		
+    </head>
+    <body>
+        <header>
+			<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Train Scheduler</a>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
+				</ul>
+			</div>
+			</nav>
+		</header>
+
+        <div class="container">
+            <div class="jumbotron col-md-6 col-md-offset-3">
+                <h2 class="display-3 text-center">Reserve a seat.</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <h2>Select a starting location:</h2>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+					<select id="departure-city" onchange="getDepartureCity()">
+						<option value="Los Angeles">Los Angeles</option>
+						<option value="San Francisco">San Francisco</option>
+						<option value="Seattle">Seattle</option>
+						<option value="Portland">Portland</option>					
+					</select>						
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <h2>Select a destination:</h2>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+					<select id="destination-city" onchange="getDestinationCity()">
+						<option value="Los Angeles">Los Angeles</option>
+						<option value="San Francisco" selected="selected">San Francisco</option>
+						<option value="Seattle">Seattle</option>
+						<option value="Portland">Portland</option>					
+					</select>						
+                </div>				
+                <div class="col-md-6 col-md-offset-3">
+                    <h2>How many seats?</h2>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+					<select id="tickets" onchange="getTickets()">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>										
+						<option value="10">10</option>
+					</select><br />				
+					<button type="button" id="submit">Submit</button>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+					<h3 id="message"></h3>
+					<p id="remaining"></p>
+                </div>					
+            </div>
+		</div>
+
+        <!-- load angular via CDN -->
+        <script src="app.js"></script>
+    </body>
+</html>
