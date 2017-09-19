@@ -89,9 +89,13 @@ submitBtn.addEventListener("click", function(){
 })
 
 var losAngeles = new Train("Los Angeles", {"San Francisco": { "distance": 380, "time": 330 }, "Portland": { "distance": 963, "time": 875 }, "Seattle": { "distance": 1135, "time": 1031 }});
+var sanFrancisco = new Train("San Francisco", {"Los Angeles": { "distance": 380, "time": 330 }, "Portland": { "distance": 963, "time": 875 }, "Seattle": { "distance": 1135, "time": 1031 }});
 
 // for mocha testing
 losAngeles.run("San Francisco"); // distanceTraveled for losAngeles train should be 380
 losAngeles.reserveSeats(9); // seats on losAngeles train should be 91
 losAngeles.remainingSeats() // should be 91
 losAngeles.returnSeats() // should be back at 100
+sanFrancisco.seats // should equal 100
+sanFrancisco.distanceTraveled // should equal 0
+sanFrancisco.reserveSeats(102) // should throw error
